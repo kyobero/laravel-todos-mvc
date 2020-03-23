@@ -36,11 +36,11 @@
 
                                 @foreach($todos as $todo)
 
-                                <li class="list-group-item">
-                                {{ $todo->name }}
+                                    <li class="list-group-item">
+                                    {{ $todo->name }}
 
-                                <button class="btn btn-primary btn-sm float-right">view</button>
-                                </li>
+                                    <button class="btn btn-primary btn-sm float-right">view</button>
+                                    </li>
 
                                 @endforeach
 
