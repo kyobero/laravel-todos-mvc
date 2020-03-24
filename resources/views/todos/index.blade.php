@@ -39,7 +39,7 @@
                                     <li class="list-group-item">
                                     {{ $todo->name }}
 
-                                    <button class="btn btn-primary btn-sm float-right">view</button>
+                                    <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">view</a >
                                     </li>
 
                                 @endforeach
