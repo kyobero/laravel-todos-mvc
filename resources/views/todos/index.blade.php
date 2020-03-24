@@ -1,63 +1,41 @@
-<!DOCTYPE html>
 
-<html lang="en">
+@extends('layouts.app')
 
-        <head>
+@section('content')
 
-            <meta charset="UTF-8">
+<h1 class="text-center my-5"> TODOS PAGE</h1>
 
-            <meta name="viewport" content="width-device-width, initial-scale1.0">
+<div class="row justify-content-center">
 
-            <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <div class="col-md-8">
+    <div class="card card-default">
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <div class ="card-header">
+            Todos
+        </div>
 
-            <title>Todos</title>
+            <div class="card-body">
 
-        </head>
+            <ul class="list-group">
 
-        <body>
+                @foreach($todos as $todo)
 
-            <div class="container">
-            <h1 class="text-center my-5"> TODOS PAGE</h1>
+                    <li class="list-group-item">
+                    {{ $todo->name }}
 
-                <div class="row justify-content-center">
-                
-                    <div class="col-md-8">
-                    <div class="card card-default">
+                    <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">view</a >
+                    </li>
 
-                        <div class ="card-header">
-                            Todos
-                        </div>
+                @endforeach
 
-                            <div class="card-body">
-
-                            <ul class="list-group">
-
-                                @foreach($todos as $todo)
-
-                                    <li class="list-group-item">
-                                    {{ $todo->name }}
-
-                                    <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">view</a >
-                                    </li>
-
-                                @endforeach
-
-                                </ul>
+                </ul>
 
 
-                            </div>
-
-                        </div>
-                    </div>
-                
-                </div>
-
-
-            
             </div>
-            
-         </body>
 
-</html>
+        </div>
+    </div>
+
+</div>
+
+@endsection
