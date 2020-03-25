@@ -1,57 +1,42 @@
-<!DOCTYPE html>
 
-<html lang="en">
+@extends('layouts.app')
 
-        <head>
+@section('title')
 
-            <meta charset="UTF-8">
+Single Todo: {{ $todo->name }}
 
-            <meta name="viewport" content="width-device-width, initial-scale1.0">
+@endsection
 
-            <meta http-equiv="X-UA-Compatible" content="ie-edge">
+@section('content')
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+<h1 div class="text-center my-5">
 
-            <title>Todo item</title>
+{{ $todo->name }}
 
-        </head>
+</h1>
 
-        <body>
+<div class="row justify-content-center">
 
-           <div class="container">
+    <div class="col-md-6">
 
-                <h1 div class="text-center my-5">
+        <div class="card card-default">
 
-                {{ $todo->name }}
+            <div class="card-header">
 
-                </h1>
-
-                <div class="row justify-content-center">
-
-                    <div class="col-md-6">
-
-                        <div class="card card-default">
-
-                            <div class="card-header">
-
-                            Details
-
-                            </div>
-
-                            <div class ="card-body">
-
-                                {{ $todo->description }}
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+            Details
 
             </div>
-            
-        </body>
 
-</html>
+            <div class ="card-body">
+
+                {{ $todo->description }}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@endsection
