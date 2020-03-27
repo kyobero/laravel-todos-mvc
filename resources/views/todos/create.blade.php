@@ -15,6 +15,18 @@
             <div class="card-header"> create new todo</div>
 
                 <div class="card-body">
+         <!-- Displlay errors code -->
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                    <ul class="list-group">
+                    @foreach($errors->all() as $error)
+                    <li class="list-group-item">
+                    {{ $error }}
+                    </li>
+                    @endforeach
+                    </ul>
+                    </div>
+                    @endif
 
                     <form action ="/store-todos" method="POST">
                         @csrf
