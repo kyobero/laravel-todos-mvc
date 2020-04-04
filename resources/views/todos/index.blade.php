@@ -29,7 +29,12 @@
                     <li class="list-group-item">
                     {{ $todo->name }}
 
-                    <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">view</a >
+                @if(!$todo->completed)
+                    <a href="/todos/{{ $todo->id }}/complete" style="color: white" class="btn btn-warning btn-sm float-right">complete</a >
+                    @endif
+                    
+                    <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right mr-2">view</a >
+                    
                     </li>
 
                 @endforeach
